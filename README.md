@@ -1,14 +1,14 @@
 # ubuntu-dev-playbook
 Ubuntu setup and configuration via Ansible
 
-`sh
+```sh
 vagrant up
-`
+```
 
-`sh
+```sh
 vagrant up --provision
-`
+```
 
-`sh
+```sh
 ansible-playbook playbook.yml
-`
+```
