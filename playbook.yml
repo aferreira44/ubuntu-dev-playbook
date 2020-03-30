@@ -1,0 +1,29 @@
+---
+- name: "Playing with Ansible and Git"
+  hosts: all
+  become: yes
+  tasks:
+    # - name: "just execute a ls -lrt command"
+    #   shell: "ls -lrt"
+    #   register: "output"
+
+    - name: Update repositories
+      apt:
+        update_cache: yes
+
+    - name: Install snap
+      apt:
+        name: snapd
+        state: present
+
+    - name: Install vim
+      apt:
+        name: vim
+        state: present
+
+    - name: Install VS Code
+      snap:
+        name: code
+        classic: yes
+
+    - debug: var=output.stdout_lines
